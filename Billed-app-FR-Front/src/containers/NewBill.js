@@ -25,20 +25,26 @@ export default class NewBill {
     formData.append('file', file)
     formData.append('email', email)
 
-    this.store
-      .bills()
-      .create({
-        data: formData,
-        headers: {
-          noContentType: true
-        }
-      })
-      .then(({fileUrl, key}) => {
-        console.log(fileUrl)
-        this.billId = key
-        this.fileUrl = fileUrl
-        this.fileName = fileName
-      }).catch(error => console.error(error))
+    if (e.target.value.includes('.jpg') || e.target.value.includes('.png')|| e.target.value.includes('.jpeg')){
+      e.target.setCustomValidity('')
+      this.store
+        .bills()
+        .create({
+          data: formData,
+          headers: {
+            noContentType: true
+          }
+        })
+        .then(({fileUrl, key}) => {
+          console.log(fileUrl)
+          this.billId = key
+          this.fileUrl = fileUrl
+          this.fileName = fileName
+        }).catch(error => console.error(error))
+      }
+    else {
+      e.target.setCustomValidity("Chargez une image de format jpg ou jpeg ou png.")
+    }
   }
   handleSubmit = e => {
     e.preventDefault()
