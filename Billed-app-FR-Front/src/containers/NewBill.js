@@ -26,6 +26,7 @@ export default class NewBill {
     formData.append('email', email)
 
     if (e.target.value.includes('.jpg') || e.target.value.includes('.png')|| e.target.value.includes('.jpeg')){
+      
       e.target.setCustomValidity('')
       this.store
         .bills()
