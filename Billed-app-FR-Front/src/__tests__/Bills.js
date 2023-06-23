@@ -9,8 +9,9 @@ import Bills from "../containers/Bills.js"
 import { ROUTES, ROUTES_PATH} from "../constants/routes.js";
 import {localStorageMock} from "../__mocks__/localStorage.js";
 import mockStore from "../__mocks__/store.js"
-
 import router from "../app/Router.js";
+
+jest.mock("../app/store", () => mockStore)
 
 describe("Given I am connected as an employee", () => {
   describe("When I am on Bills Page", () => {
@@ -42,9 +43,9 @@ describe("Given I am connected as an employee", () => {
       expect(dates).toEqual(datesSorted)
     })
   })
-  // bouton icone ouverture des details de la note
-  describe("When i click on the icone for bill's precision", () => {
-    test("Then bill's precision is displayed", () => {
+  // bouton Action icone ouverture de la modale de la note
+  describe("When i click on the icone for bill's modal", () => {
+    test("Then bill's modal is displayed", () => {
       const onNavigate = (pathname) => {
         document.body.innerHTML = ROUTES({pathname})
       }
