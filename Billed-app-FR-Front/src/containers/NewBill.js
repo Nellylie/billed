@@ -45,6 +45,7 @@ export default class NewBill {
       }
     else {
       e.target.setCustomValidity("Chargez une image de format jpg ou jpeg ou png.")
+      return 'format error'
     }
   }
   handleSubmit = e => {
