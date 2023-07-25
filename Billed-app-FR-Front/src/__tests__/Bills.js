@@ -54,8 +54,8 @@ describe("Given I am connected as an employee", () => {
 
       const iconEye = screen.getAllByTestId("icon-eye")[0]
       const clickIconeImage = jest.fn(mockBill.handleClickIconEye(iconEye))
-
       iconEye.addEventListener("click", clickIconeImage)
+      fireEvent.click(iconEye)
       expect(clickIconeImage).toHaveBeenCalled;
       expect(screen.getAllByText("Justificatif")).toBeTruthy()
     })
@@ -95,7 +95,7 @@ describe("Given I am connected as an employee", () => {
       const mockedBills = new Bills({document, onNavigate, store: mockStore, localStorage: window.localStorage,})
       const bills = await mockedBills.getBills()
       document.body.innerHTML = BillsUI({ data: bills })
-      expect(bills.length >= 0).toBeTruthy()
+      expect(bills.length >= 1).toBeTruthy()
     })
   })
   describe("When an error occurs on API", () => {
