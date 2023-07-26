@@ -1,5 +1,5 @@
 
-# Billed :
+# Billed Débuggez et testez un SaaS RH
 
 Clonez le projet :
 ```
@@ -23,6 +23,17 @@ Example app listening on port 5678!
 Verifiez le demarrage du server : `http://127.0.0.1:5678`
 
 ### pour lancer le front
+
+Se positionner sur le repertoire front
+```
+$ cd Billed-app-FR-Front
+```
+
+Installez les packages npm :
+```
+$ npm install
+```
+
 Utilisez live-server
 ```
 $ live-server
