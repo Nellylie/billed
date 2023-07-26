@@ -1,36 +1,46 @@
-# Billapp backend
 
-================ FR ====================
+# Billed :
 
-## Comment lancer l'API en local:
-
-### Cloner le projet:
+Clonez le projet :
 ```
-git clone https://github.com/OpenClassrooms-Student-Center/Billed-app-FR-Back.git
+$ git clone https://github.com/Nellylie/billed.git
 ```
-
-### Acceder au repertoire du projet :
+### Pour démarrer le back
+Se positionner sur le repertoire back
 ```
-cd Billed-app-FR-Back
+$ cd Billed-app-FR-Back
 ```
 
-### Installer les dépendances du projet :
+Installez les packages npm :
+```
+$ npm install
+```
+Lancez le server :
+```
+$ node server.js
+```
+Example app listening on port 5678!
+Verifiez le demarrage du server : `http://127.0.0.1:5678`
+
+### pour lancer le front
+Utilisez live-server
+```
+$ live-server
+```
+Verifiez la mise en route du site : `http://127.0.0.1:8080`
+
+## Lancer les tests en local avec Jest
 
 ```
-npm install
+$ npm run test
 ```
 
-### Lancer l'API :
+## Afficher la couverture de test
 
-```
-npm run run:dev
-```
+`http://127.0.0.1:8080/coverage/lcov-report/`
 
-### Accéder à l'API :
-
-L'api est accessible sur le port `5678` en local, c'est à dire `http://localhost:5678`
-
-## Utilisateurs par défaut:
+## Comptes et utilisateurs 
+Pour se connecter :
 
 ### administrateur : 
 ```
@@ -40,49 +50,5 @@ mot de passe : admin
 ### employé :
 ```
 utilisateur : employee@test.tld
-mot de passe : employee
-```
-
-
-================ EN ====================
-
-
-## How to run the API locally :
-
-
-### Clone the projet:
-```
-git clone https://github.com/OpenClassrooms-Student-Center/Billed-app-FR-Back.git
-```
-
-### Go to the project directory :
-```
-cd Billed-app-FR-Back
-```
-
-### Install project dependancies :
-
-```
-npm install
-```
-
-### Run the API :
-
-```
-npm run:dev
-```
-
-### Access to the PAI :
-
-The API is locally available on port `5678`, go to `http://localhost:5678`
-
-### administrateur : 
-```
-utilisateur : admin@company.tld 
-mot de passe : admin
-```
-### employé :
-```
-utilisateur : employee@company.tld
 mot de passe : employee
 ```
