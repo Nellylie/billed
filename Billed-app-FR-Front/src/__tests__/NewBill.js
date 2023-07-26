@@ -52,8 +52,8 @@ describe('Given I am connected as an employee', () => {
       expect(inputBtn.files[0].name).toBe("test.jpg")
     })
   })
-  describe("When I select a bad or a good file's format", () => {
-    test("verify if the bad file's format is with an error", () => {
+  describe("When I select a bad file's format", () => {
+    test("verify if the bad file's format triggers an error", () => {
       const onNavigate = (pathname) => {
         document.body.innerHTML = ROUTES({ pathname })
       }
@@ -69,7 +69,7 @@ describe('Given I am connected as an employee', () => {
           files: [new File(["test.txt"], "test.txt", { type: "text/txt" })],
         },
       })
-      })
+    })
   })
 
 })
